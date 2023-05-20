@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <style>
+        .circle {
+            display: flex;
+            margin: auto;
+            border-radius: 50%;;
+        }
+        .c1{
+            width: 500px;
+            height: 500px;
+            background-color: green;
+        }
+
+        .c2{
+            width: 350px;
+            height: 350px;
+            background-color: white;
+        }
+        .c3{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <div class="circle c1 animated infinite">
+        <div class="circle c2 animated infinite">
+            <div class="circle c3 animated infinite"></div>
+        </div>
+    </div>
+
+    <script>
+            $('.c1').click(e => {
+                $('.c1').addClass("pulse");
+                console.log(e.target, e.currentTarget);
+                // e.stopPropagation();
+                // return false;
+            })
+            $('.c2').click(e => {
+                $('.c2').addClass("bounce");
+                console.log(e.target, e.currentTarget);
+                // e.stopPropagation();
+                // return false;
+            })
+            $('.c3').click(e => {
+                $('.c3').addClass("wobble");
+                console.log(e.target, e.currentTarget);
+                //e.stopPropagation();
+                //e.preventDefault();
+                // return false;
+            })
+    </script>
+</body>
+</html>

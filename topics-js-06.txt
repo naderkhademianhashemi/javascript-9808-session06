@@ -1,0 +1,209 @@
+jQuery inputs
+		$("h1") // css selector
+        $("<h2 >Test</h2>") //html builder
+       
+        $(window)   // warp object
+        $(document) // warp object
+        $(e.target) // warp object
+
+        $(function(){}) // document ready
+
+ctrl + / -->commnet javascript
+ctrl + C -->terminate terminal
+
+Review
+	JQuery	
+		Cross Browser
+		css selector
+			extra css selector, contains(), :text
+		event handling
+			click/contextmenu/keydown/mousemove
+			on <-- GENERAL Method
+			
+			events => ?event arg?
+			default
+				e.preventdefault
+		
+		setter/getter	
+			.text("aaa")
+				// elm.innerText += "test"
+				// let value = $e.text();
+				// $e.text(value + "test")
+				// $e.text(oldvalue => oldvalue + "test")
+			append?
+		animations
+			fadeIn/fadeOut, slideUp/slideDown
+			animate <-- GENERAL Method
+			***queue***
+				stop
+------------------------------------------------------
+
+	Dynamic Content
+		ul > li * 3 
+		click -> alert
+			
+		Add button -> new li, is click working for new li?
+			
+			$('button').click(e => {
+                $('ul').append('<li>Sample</li>')            
+            })
+			
+			$('li').click(e => {
+                let dom = e.target;            
+                alert($(e.target).text())
+            })
+			
+		why?
+		$('PARENT').on('EVENT', 'CHILD SELECTOR')
+			PARENT must be specific
+		
+		// $(document).ready(e => {
+        $(e => {
+            $('button').click(e => {
+                $('ul').append('<li>Sample</li>')            
+            })
+    
+            $('ul').on('click' , 'li', e => {
+                let dom = e.target;            
+                alert($(e.target).text())
+            })
+        })
+		
+	Event(click) propagation
+		from child to parents
+		e.stopPropagation()
+		return false - > stopPropagation and preventDefault
+		
+		<div class="circle c1 animated infinite">
+        <div class="circle c2 animated infinite">
+            <div class="circle c3 animated infinite"></div>
+        </div>
+		</div>
+		
+		$('.c1').click(e => {
+                $('.c1').addClass("pulse");
+                console.log(e.target, e.currentTarget);
+                // e.stopPropagation();
+                // return false;
+            })
+            $('.c2').click(e => {
+                $('.c2').addClass("bounce");
+                console.log(e.target, e.currentTarget);
+                // e.stopPropagation();
+                // return false;
+            })
+            $('.c3').click(e => {
+                $('.c3').addClass("wobble");
+                
+                //e.stopPropagation();
+                //e.preventDefault();
+                // return false;
+            })
+		
+		
+		target - original->usually used
+			vs 
+		currentTarget-> parent event
+		
+		animate.css ::  https://daneden.github.io/animate.css/
+			animated infinite
+			pulse
+			bounce
+			wobble
+	
+	Wrapper Object
+		cross browser
+	
+		simple jquery library
+		jquery object vs querySelector (DOM) object
+	
+	
+	Samples
+		Scroll
+			$(window).scroll
+				$(e.target).scrollTop()
+			$('body, html').animate({scrollTop: 0}, 2s)
+		
+		Scroll to element
+			$().offset().top
+			
+	DOM Traversing
+		https://oscarotero.com/jquery/
+		
+		next/nextAll/nextUntil
+		prev/prevAll/prevUntil
+		parent/parentsUntil/parents
+		
+		<style>
+        i {
+            color: gray;
+        }
+        i.xyz{
+            color: gold;
+        }
+    </style>
+		<div class="rating">
+        <i class="fa fa-star fa-2x"></i>
+        <i class="fa fa-star fa-2x"></i>
+        <i class="fa fa-star fa-2x"></i>
+        <i class="fa fa-star fa-2x"></i>
+        <i class="fa fa-star fa-2x"></i>
+    </div>
+    
+    <script>
+        $('i').hover(e=>{
+            $(e.target).prevAll().addBack().addClass('xyz');
+        }, e=>{
+            $(e.target).prevAll().addBack().removeClass('xyz');
+            // $(e.target).removeClass('xyz');
+        })
+    </script>
+		
+		
+		each
+		
+		
+	Samples
+		Rating
+			add()
+			addBack()
+	
+	
+	jQuery Utilities
+		syntax !!!
+		
+		$.each
+		array.forEach
+	
+		$().get();
+		
+	underscore
+	lodash
+		_.filter(ps, {name: 'P1'})
+	
+	
+	console.table
+	
+	
+	Jquery Plugins
+		what is plugin?		
+		$.fn.pluginName = function()
+		config
+		
+	
+	bxSlider
+	
+	
+	plugin 
+		at minume has a js file
+		can have some .css or font or image
+		plugin must be loaded after jquery
+		
+		template
+	
+	Homework	
+		fancybox
+		select2
+		isotop	https://isotope.metafizzy.co/
+		bxSlider
+		bestjquery

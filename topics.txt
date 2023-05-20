@@ -1,0 +1,120 @@
+Review
+	JQuery	
+		Cross Browser
+		css selector
+			extra css selector, contains(), :text
+		event handling
+			click/contextmenu/keydown/mousemove
+			on <-- GENERAL Method
+			
+			events => ?event arg?
+			default
+				e.preventdefault
+		
+		setter/getter	
+			.text("aaa")
+				// elm.innerText += "test"
+				// let value = $e.text();
+				// $e.text(value + "test")
+				// $e.text(oldvalue => oldvalue + "test")
+			append?
+		animations
+			fadeIn/fadeOut, slideUp/slideDown
+			animate <-- GENERAL Method
+			***queue***
+				stop
+------------------------------------------------------
+
+	Dynamic Content
+		ul > li * 3 
+		click -> alert
+		
+		Add button -> new li, is click working for new li?
+	
+		why?
+		$('PARENT').on('EVENT', 'CHILD SELECTOR')
+			PARENT must be specific
+		
+	Event propagation
+		e.stopPropagation()
+		stopPropagation vs preventDefault
+		target - original
+			vs 
+		currentTarget
+		
+		animate.css ::  https://daneden.github.io/animate.css/
+			animated infinite
+			pulse
+			bounce
+			wobble
+	
+	Wrapper Object
+		cross browser
+	
+		simple jquery library
+		jquery object vs querySelector (DOM) object
+	
+	
+	Samples
+		Scroll
+			$(window).scroll
+				$(e.target).scrollTop()
+			$('body, html').animate({scrollTop: 0}, 2s)
+		
+		Scroll to element
+			$().offset().top
+			
+	DOM Traversing
+		https://oscarotero.com/jquery/
+		
+		next/nextAll/nextUntil
+		prev/prevAll/prevUntil
+		parent/parentsUntil/parents
+		
+		each
+		
+		
+	Samples
+		Rating
+			add()
+			addBack()
+	
+	
+	jQuery Utilities
+		syntax !!!
+		
+		$.each
+		array.forEach
+	
+		$().get();
+		
+	underscore
+	lodash
+		_.filter(ps, {name: 'P1'})
+	
+	
+	console.table
+	
+	
+	Jquery Plugins
+		what is plugin?		
+		$.fn.pluginName = function()
+		config
+		
+	
+	bxSlider
+	
+	
+	plugin 
+		at minume has a js file
+		can have some .css or font or image
+		plugin must be loaded after jquery
+		
+		template
+	
+	Homework	
+		fancybox
+		select2
+		isotop	https://isotope.metafizzy.co/
+		bxSlider
+		bestjquery

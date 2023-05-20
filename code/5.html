@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <style>
+        i {
+            color: gray;
+        }
+        i.xyz{
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <div class="rating">
+        <i class="fa fa-star fa-2x"></i>
+        <i class="fa fa-star fa-2x"></i>
+        <i class="fa fa-star fa-2x"></i>
+        <i class="fa fa-star fa-2x"></i>
+        <i class="fa fa-star fa-2x"></i>
+    </div>
+    
+    <script>
+        $('i').hover(e=>{
+            $(e.target).prevAll().addBack().addClass('xyz');
+        }, e=>{
+            $(e.target).prevAll().addBack().removeClass('xyz');
+            // $(e.target).removeClass('xyz');
+        })
+    </script>
+</body>
+</html>
